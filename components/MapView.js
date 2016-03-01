@@ -355,6 +355,7 @@ class MapView extends React.Component {
       this.map.setNativeProps({ region: initialRegion });
     }
     this.setState({ isReady: true });
+    setTimeout(() => this.props.onMapReady && this.props.onMapReady());
   }
 
   _onLayout(e) {
