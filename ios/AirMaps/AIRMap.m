@@ -188,7 +188,7 @@ const CGFloat AIRMapZoomBoundBuffer = 0.01;
 
 - (void)setFollowsUserLocation:(BOOL)followsUserLocation
 {
-    _followUserLocation = followsUserLocation;
+    // _followUserLocation = followsUserLocation;
 }
 
 - (void)setHandlePanDrag:(BOOL)handleMapDrag {
