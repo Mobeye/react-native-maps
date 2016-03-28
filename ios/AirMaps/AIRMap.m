@@ -190,12 +190,12 @@ const CGFloat AIRMapZoomBoundBuffer = 0.01;
 - (void)setShowsUserLocation:(BOOL)showsUserLocation
 {
     if (self.showsUserLocation != showsUserLocation) {
-        if (showsUserLocation && !_locationManager) {
+        /*if (showsUserLocation && !_locationManager) {
             _locationManager = [CLLocationManager new];
             if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
                 [_locationManager requestWhenInUseAuthorization];
             }
-        }
+        }*/
         super.showsUserLocation = showsUserLocation;
     }
 }
