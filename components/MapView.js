@@ -288,7 +288,7 @@ var MapView = React.createClass({
       this.refs.map.setNativeProps({ region: initialRegion });
     }
     this.setState({ isReady: true });
-    setTimeout(() => onMapReady && onMapReady());
+    setTimeout(() => this.props.onMapReady && this.props.onMapReady());
   },
 
   _onLayout: function(e) {
