@@ -45,6 +45,8 @@ public class AirMapMarker extends AirMapFeature {
     private String title;
     private String snippet;
 
+    private boolean mRemoved;
+
     private boolean anchorIsSet;
     private float anchorX;
     private float anchorY;
@@ -238,6 +240,7 @@ public class AirMapMarker extends AirMapFeature {
 
     @Override
     public void removeFromMap(GoogleMap map) {
+        mRemoved = true;
         marker.remove();
     }
 
@@ -269,6 +272,10 @@ public class AirMapMarker extends AirMapFeature {
 
     public void update() {
         if (marker == null) {
+            return;
+        }
+
+        if (mRemoved) {
             return;
         }
 
