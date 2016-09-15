@@ -502,6 +502,14 @@ RCT_EXPORT_METHOD(takeSnapshot:(nonnull NSNumber *)reactTag
 
 - (MKAnnotationView *)mapView:(__unused AIRMap *)mapView viewForAnnotation:(AIRMapMarker *)marker
 {
+
+    // Override the title of the User marker to disable the infoWindow
+    if ([marker isKindOfClass:[MKUserLocation class]])
+    {
+        ((MKUserLocation *)marker).title = @"";
+        return nil;
+    }
+
     if (![marker isKindOfClass:[AIRMapMarker class]]) {
         return nil;
     }
